@@ -44,6 +44,17 @@ sudo systemctl restart postgresql.service
 sudo systemctl restart postgresql@11-main.service
 ```
 
+# Optional steps to Initalize and tune
+```
+sudo su postgres 
+
+/usr/pgsql-12/bin/pg_ctl initdb
+
+ sudo timescaledb-tune --pg-config=/usr/pgsql-12/bin/pg_config --conf-path /DATA/pgdata/12/data/postgresql.conf 
+ or 
+sudo timescaledb-tune --pg-config=/usr/pgsql-12/bin/pg_config 
+```
+
 # Step - 8
 ```
 sudo su postgres
